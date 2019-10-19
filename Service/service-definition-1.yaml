@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: webapp-service
 spec:
-  type: Nodeport
+  type: NodePort
   ports:
     - targetPort: 8080
       port: 8080
