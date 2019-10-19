@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-10-19T13:32:20Z
+  labels:
+    run: webapp
+  name: webapp-service
+  namespace: default
+  resourceVersion: "4734"
+  selfLink: /api/v1/namespaces/default/services/webapp-service
+  uid: e058b2e5-f274-11e9-9c39-0242ac110014
+spec:
+  clusterIP: 10.103.138.36
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30082
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: webapp
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
