@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+  namespace: finance
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: redis-container
+      image: redis
