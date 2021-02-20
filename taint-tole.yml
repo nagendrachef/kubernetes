@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    env: test
+  name: nginx
+spec:
+  containers:
+    -
+      image: nginx
+      name: nginx
+  tolerations:
+    -
+      effect: "NoSchedule"
+      key: "app"
+      operator: "Equal"
+      value: "blue"
+# Before running this ..we need to run the tain command on node level from master
+#kubectl taint nodes kubeworker1 app=blue:NoSchedule  
+#taints types: NoSchedule, PreferNoSchedule,NoExecute
+#Taints are for only nodes and tolerations are for pods. ===== IMP ======
