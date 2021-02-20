@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-lb
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+       app: myapp
+  template:
+     metadata:
+        labels:
+          app: myapp
+     spec:
+      containers:
+        - name: nginx-container
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
