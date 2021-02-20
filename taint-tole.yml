@@ -19,3 +19,6 @@ spec:
 #kubectl taint nodes kubeworker1 app=blue:NoSchedule  
 #taints types: NoSchedule, PreferNoSchedule,NoExecute
 #Taints are for only nodes and tolerations are for pods. ===== IMP ======
+
+#To untaint the nodes we need to run kubectl taint nodes kubeworker1 app=blue:NoSchedule-
+#To see the taint nodes... kubectl describe node nodename | grep Taint
